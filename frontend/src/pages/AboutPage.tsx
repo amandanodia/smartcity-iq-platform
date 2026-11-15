@@ -1,0 +1,15 @@
+import { Compass, Eye, MessageSquareText, Target } from 'lucide-react'
+
+const skills = [
+  { icon: Target, title: 'Frame the business scenario', body: 'Define the urban question, target audience, reporting period, and geographic coverage before choosing a measure.' },
+  { icon: Compass, title: 'Choose the right visuals', body: 'Match a visual form to the data type and analytical task, with maps and charts added only when the source supports them.' },
+  { icon: Eye, title: 'Create effective visuals', body: 'Use consistent labels, units, scales, and accessible presentation to make comparisons easier to interpret.' },
+  { icon: MessageSquareText, title: 'Communicate insights', body: 'Explain the method, number of observations, source, period, and limits alongside every reported result.' },
+]
+
+export function AboutPage() {
+  return <div className="space-y-6"><section className="max-w-4xl"><p className="text-xs font-semibold uppercase tracking-[0.14em] text-blue-800">Project context</p><h2 className="mt-1 text-2xl font-semibold tracking-tight text-slate-950">About SmartCity IQ</h2><p className="mt-3 text-sm leading-7 text-slate-600">SmartCity IQ is an Indian Urban Intelligence Platform designed to organize verified city datasets and communicate what they do and do not show. It serves government authorities, urban planners, researchers, and citizens with transparent source references and explicit data coverage.</p></section>
+    <section className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">{skills.map(({ icon: Icon, title, body }) => <article key={title} className="rounded-xl border border-slate-200 bg-white p-5"><span className="grid h-10 w-10 place-items-center rounded-lg bg-blue-50 text-blue-800"><Icon className="h-5 w-5" /></span><h3 className="mt-4 text-sm font-semibold text-slate-900">{title}</h3><p className="mt-2 text-sm leading-6 text-slate-600">{body}</p></article>)}</section>
+    <section className="grid gap-5 lg:grid-cols-2"><div className="rounded-xl border border-slate-200 bg-white p-5"><h3 className="font-semibold text-slate-900">Data integrity commitments</h3><ul className="mt-3 space-y-2 text-sm leading-6 text-slate-600"><li>• Never fabricate real-world measurements or fill missing values with zero.</li><li>• Preserve source files, raw rows, references, observation periods, and original units.</li><li>• Keep historical, live, manually imported, and demonstration records clearly labeled.</li><li>• Display unavailable coverage as unavailable and show source attribution.</li></ul></div><div className="rounded-xl border border-slate-200 bg-white p-5"><h3 className="font-semibold text-slate-900">Current development scope</h3><p className="mt-3 text-sm leading-6 text-slate-600">City and date filters, module navigation, API data states, source listings, and quality-report views are in place. Interactive charts and geographic maps are scheduled for the next development phase.</p><p className="mt-3 text-xs leading-5 text-slate-500">Analytics summarize reported observations. Correlation, when explored, does not establish causation.</p></div></section>
+  </div>
+}
